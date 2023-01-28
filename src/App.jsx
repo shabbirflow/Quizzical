@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import Question from "./Question";
+import Confetti from "./Confetti";
 
 function App() {
   const [quesData, setQuesData] = useState([]);
@@ -31,7 +32,7 @@ function App() {
     const newarray = clicked.slice()
     newarray[ind] = val
     setClicked(newarray)
-    console.log(clicked)
+    // console.log(clicked)
   }
 
   function handleStart(){
@@ -62,9 +63,9 @@ function App() {
       for(let i = 0; i<clicked.length; i++){
         if(clicked[i] === quesData[i].correct_answer) temp++;
       }
-      console.log(temp)
-      console.log(clicked)
-      console.log(quesData)
+      // console.log(temp)
+      // console.log(clicked)
+      // console.log(quesData)
       setCheck(true);
       setStatus( `You got ${temp} points!`)
       // setGame(false);
@@ -86,7 +87,9 @@ function App() {
       {game && questionelements}
       {game && <h5 className="status">{status}</h5>}
       { (game && !check) &&  <button className="Check button" onClick = {handleCheck} > Check Answers! </button> }
+      {check && <Confetti />}
       {check && <button className="Reset button" onClick = {handleReset}> Play Again </button>} 
+      
     </div>
       
   );

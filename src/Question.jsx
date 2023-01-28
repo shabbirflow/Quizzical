@@ -24,7 +24,7 @@ export default function Question({
                 x === selected ?
                     x === correct_answer ? {backgroundColor: "#03C988", color: "white"} : {backgroundColor: "red", color: "white"}
                 : 
-                    x === correct_answer ? {backgroundColor: '#9DF1DF'} : {backgroundColor: '#FFF2F2'}
+                    x === correct_answer ? {backgroundColor: "#03C988", color: "white"} : {backgroundColor: '#E8E2E2', color: 'grey'}
       } 
       >
        {decodeURIComponent(x)}
